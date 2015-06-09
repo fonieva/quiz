@@ -9,3 +9,4 @@ body { font: 16px Georgia, serif; }
 section > div { padding: 10px; }
 header, nav, section, footer { background: #eee; text-align: center; }
 nav span { margin: 0px 10px 0px 0px; }
+img { padding-top: 10px; border-radius: 10%; height:100px; width:100px;}

@@ -2,7 +2,7 @@ var path = require('path');
 
 //Postgress DATABASE_URL = postgres://user:paswd@host:port/database
 //SQLite DATABASE_URL = sqlite://:@:/
-var url = process.env.DATABASE_URL.watch(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);  
+var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);  
 var DB_name = (url[6]||null); 
 var user = (url[2]||null);
 var pwd = (url[3]||null);

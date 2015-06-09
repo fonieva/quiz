@@ -5,5 +5,5 @@ body { background: #333; }
 h2 span, section h3 { display: none; }
 body { font-size: xx-large; }
 footer, input { font-size: large; }
-#left { padding-top: 20px; }
-#right { padding-top: 10px; }
+img { padding-top: 10px; border-radius: 10%; height:100px; width:100px;}
+iframe { padding-top: 10px; height: 150px; width: 150px; }
