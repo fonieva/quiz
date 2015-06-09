@@ -40,7 +40,7 @@ sequelize.sync().then(function() {
 				pregunta: "Capital de Roma?", 
 				respuesta: "Roma" 
 			//}).success(function(){console.log("BD inicializada")});
-			}).then(function(){console.log("BD inicializada"});
+			}).then(function(){console.log("BD inicializada")});
 		};
 	});
 });
