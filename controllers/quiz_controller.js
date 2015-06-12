@@ -12,10 +12,20 @@ exports.load = function(req, res, next, quizId){
 };
 
 // GET index
-exports.index = function(req, res){
-	models.Quiz.findAll().then(function(quizes){
-		res.render('quizes/index', { quizes: quizes });
-	}).catch(function(error) { next(error); });
+exports.index = function(req, res, next){
+	if (req.query.search){
+		var search = '%' + req.query.search.replace(/\s/g,"%") + '%';
+		models.Quiz.findAll({ 
+	 		where: ["pregunta like ?", search], 
+ 			order: [['pregunta', 'ASC']]
+ 		}).then(function(quizes){
+	 		res.render('quizes/index', { quizes: quizes });
+	 	}).catch(function(error) { next(error); });
+	} else {
+		models.Quiz.findAll().then(function(quizes){
+			res.render('quizes/index', { quizes: quizes });
+		}).catch(function(error) { next(error); });
+	}
 };
 
 //GET /quizes/:id
@@ -33,7 +43,7 @@ exports.answer = function(req, res){
 	}		
 };
 
-//GET /author
+ //GET /author
 exports.author = function(req, res){
 	res.render('author', {author: "Francisco José Onieva"});
 };
